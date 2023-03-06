@@ -1,9 +1,15 @@
-import { Navbar } from "./components/Navbar";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Components } from "./views/Components";
+import { Home } from "./views/Home";
 
 export const App = () => {
   return (
-    <div className="">
-      <Navbar />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/components" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/components" element={<Components />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
